@@ -1,0 +1,38 @@
+<div class="row">
+  <div class="col-md-4">
+    <input type="text" class="form-control" placeholder="Search here ..." [(ngModel)]="search">
+  </div>
+  <div class="col-md-4">
+      <input type="text" class="form-control" placeholder="Key here ..." [(ngModel)]="orderKey">
+    </div>
+  <div class="col-md-4">
+    <span>
+      <select name="order" [(ngModel)]="order">
+        <option value="1">Ascending</option>
+        <option value="-1">Descending</option>
+      </select>
+    </span>
+  </div>
+</div>
+
+<table class="table">
+  <tbody>
+    <tr>
+        <th>S. No</th>
+        <th class="pointer" (click)="sort()" > 
+          Name
+        </th>
+        <th>Dept</th>
+        <th>City</th>
+        <th>DOB</th>
+    </tr>
+    <tr  *ngFor="let user of users | userfilter:search  |orderBy:orderKey:order;let i=index ">
+        <td>{{ i + 1 }}</td>
+        <td>{{user.name | titlecase}}</td>
+        <td>{{user.dept | uppercase}}</td>
+        <td>{{user.city }}</td>
+        <td>{{user.dob }}</td>
+    </tr>
+
+  </tbody>
+</table>

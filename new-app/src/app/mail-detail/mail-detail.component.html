@@ -1,0 +1,26 @@
+
+<table class="table">
+  <tbody>
+    <tr>
+        <th>Id</th>
+        <th>Userfirstname</th>
+        <th>Userlastname</th>
+        <th>Userpassword</th>
+        <th>Userrole</th>
+        <th>Useremail</th>
+        <th>Authcode</th>
+        <th>Maildatetime</th>
+    </tr>
+    <tr  *ngFor="let mail of maildetail">
+        <td>{{mail.id }}</td>
+        <td>{{mail.userfirstname | titlecase}}</td>
+        <td>{{mail.userlastname| uppercase}}</td>
+        <td>{{mail.userpassword }}</td>
+        <td>{{mail.userrole}}</td>
+        <td>{{mail.useremail}}</td>
+        <td>{{mail.authcode}}</td>
+        <td>{{mail.maildatetime}}</td>
+    </tr>
+
+  </tbody>
+</table>
